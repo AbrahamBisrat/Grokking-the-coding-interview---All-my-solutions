@@ -21,6 +21,7 @@ public class maximumSumSubArray {
 		System.out.println("Same Concept different code : " + findMaxSubArray(testArray, k));
 	}
 	
+	// O(N)
 	private static int maxSumSubArray(int[] arr, int k) {
 		int maxSum = 0;
 		for(int i = 0; i < k; i++)
@@ -35,7 +36,14 @@ public class maximumSumSubArray {
 		return finalResult;
 	}
 	
-	// Same thing but different code
+	/*
+	 * Same concept but slightly different approach with the first iteration of filling the 
+	 * 'k' elements.
+	 * 
+	 * TC - O(N)
+	 * SC - O(1) - constant space, since we are only keeping track of the window elements.
+	 * 
+	 */
 	private static int findMaxSubArray(int[] arr, int k) {
 		int windowSum = 0;
 		int maxSum = 0;
