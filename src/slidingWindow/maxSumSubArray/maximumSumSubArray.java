@@ -6,7 +6,7 @@ package slidingWindow.maxSumSubArray;
  * 
  * Input: [2, 1, 5, 1, 3, 2], k=3 
  * Output: 9
- * Explanation: Sub-array with maximum sum is [5, 1, 3].
+ * Explanation: Sub-array with maximum sum is [5, 1, 3]
  * 
  * @author Er. Abraham Bisrat
  *

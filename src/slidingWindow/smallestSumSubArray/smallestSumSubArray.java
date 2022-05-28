@@ -8,7 +8,7 @@ package slidingWindow.smallestSumSubArray;
  * 
  * Input: [2, 1, 5, 2, 3, 2], S=7 
 	Output: 2
-	Explanation: The smallest subarray with a sum great than or equal to '7' is [5, 2].
+	Explanation: The smallest sub-array with a sum great than or equal to '7' is [5, 2].
  * 
  * @author Er. Abraham Bisrat
  *
