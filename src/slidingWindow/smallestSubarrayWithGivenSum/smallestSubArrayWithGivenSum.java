@@ -1,19 +1,16 @@
 package slidingWindow.smallestSubarrayWithGivenSum;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 
  * Given an array of positive numbers and a positive number 'S', find the length 
  * of the smallest contiguous sub-array whose sum is greater than the given number k.
  * 
- * 	Input: [2, 1, 5, 2, 3, 2], S=7 
+ * 	Input: [2, 1, 5, 2, 3, 2], S=7
 	Output: 2
 	Explanation: The smallest sub-array with a sum great than or equal to '7' is [5, 2].
  * 
  * 
- *	Input: [2, 1, 5, 2, 8], S=7 
+ *	Input: [2, 1, 5, 2, 8], S=7
 	Output: 1
 	Explanation: The smallest sub-array with a sum greater than or equal to '7' is [8].
 	
