@@ -1,7 +1,9 @@
 package slidingWindow.longestDistinctSubString;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *	Given a string, find the length of the longest substring which has no repeating characters.
@@ -71,7 +73,7 @@ public class longestDistinctSubstring {
 				// update the startWindow by bringing it all the way to the current element index.
 				windowStart = Math.max(windowStart, charFreqMap.get(current) + 1);
 			}
-			charFreqMap.put(current, windowEnd); // It doesn't matter what value we give it.
+			charFreqMap.put(current, windowEnd); // windowEnd is later used to jump to that part when finding dup.
 			maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
 		}
 		return maxLength;
