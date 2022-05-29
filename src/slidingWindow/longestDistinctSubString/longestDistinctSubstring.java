@@ -30,6 +30,11 @@ public class longestDistinctSubstring {
 		System.out.println(longestDistinctSubString("aabccbb"));
 		System.out.println(longestDistinctSubString("abbbb"));
 		System.out.println(longestDistinctSubString("abccde"));//aaaxyzcdl"));
+		
+		System.out.println("Improved and easier version");
+		System.out.println(longestDistinctElements("aabccbb"));
+		System.out.println(longestDistinctElements("abbbb"));
+		System.out.println(longestDistinctElements("abccdeaaaxyzcdl"));
 	}
 	private static int longestDistinctSubString(String str) {
 		System.out.println(str);
@@ -49,6 +54,25 @@ public class longestDistinctSubstring {
 			charFreqMap.put(current, charFreqMap.getOrDefault(current, 0) + 1);
 			maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
 //			System.out.println(charFreqMap);
+		}
+		return maxLength;
+	}
+	
+	private static int longestDistinctElements(String str) {
+		int windowStart = 0;
+		int maxLength = 0;
+		Map<Character, Integer> charFreqMap = new HashMap<>();
+		
+		for(int windowEnd = 0; windowEnd < str.length(); windowEnd++) {
+			char current = str.charAt(windowEnd);
+			
+			if(charFreqMap.containsKey(current)) {
+				// if the map contains the current item
+				// update the startWindow by bringing it all the way to the current element index.
+				windowStart = Math.max(windowStart, charFreqMap.get(current) + 1);
+			}
+			charFreqMap.put(current, windowEnd); // It doesn't matter what value we give it.
+			maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
 		}
 		return maxLength;
 	}
