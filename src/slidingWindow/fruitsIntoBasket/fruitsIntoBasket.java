@@ -31,7 +31,7 @@ public class fruitsIntoBasket {
 		System.out.println(maxFruitsIntoTwoBaskets(new Character[] {'A', 'B', 'C', 'A', 'C'}));
 		System.out.println(maxFruitsIntoTwoBaskets(new Character[] {'A', 'B', 'C', 'B', 'B', 'C'}));
 		System.out.println("\n\n\n Another approach");
-		System.out.println(maxFruitIntoTwoBasketsSliding(new Character[] {'A', 'B', 'C', 'A', 'C'}));
+		System.out.println(maxFruitIntoTwoBasketsSliding(new Character[] {'A', 'B', 'C', 'A', 'C', 'A', 'D', 'D', 'D'}));
 		System.out.println(maxFruitIntoTwoBasketsSliding(new Character[] {'A', 'B', 'C', 'B', 'B', 'C'}));
 	}
 	private static int maxFruitsIntoTwoBaskets(Character[] arr) {
@@ -57,7 +57,7 @@ public class fruitsIntoBasket {
 		
 		for(int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
 			charFreqMap.put(arr[windowEnd], charFreqMap.getOrDefault(arr[windowEnd], 0) + 1);
-			while(charFreqMap.size() > 2) {
+			while(charFreqMap.size() > 3) {
 				charFreqMap.put(arr[windowStart], charFreqMap.get(arr[windowStart]) - 1);
 				
 				if(charFreqMap.get(arr[windowStart]) == 0)
