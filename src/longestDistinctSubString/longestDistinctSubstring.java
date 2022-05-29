@@ -1,4 +1,4 @@
-package slidingWindow.longestSubStringWithMoreThanKElements;
+package longestDistinctSubString;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,7 @@ public class longestDistinctSubstring {
 	public static void main(String[] args) {
 		System.out.println(longestDistinctSubString("aabccbb"));
 		System.out.println(longestDistinctSubString("abbbb"));
-		System.out.println(longestDistinctSubString("abccdeaaaxyzcdl"));
+		System.out.println(longestDistinctSubString("abccde"));//aaaxyzcdl"));
 	}
 	private static int longestDistinctSubString(String str) {
 		System.out.println(str);
@@ -40,7 +40,6 @@ public class longestDistinctSubstring {
 		
 		for(int windowEnd = 0; windowEnd < str.length(); windowEnd++) {
 			current = str.charAt(windowEnd);
-			System.out.println(str.length() +  " + " + windowEnd);
 			while(charFreqMap.containsKey(current)) {
 				charFreqMap.put(str.charAt(windowStart), charFreqMap.get(current) - 1);
 				if(charFreqMap.get(current) == 0)
