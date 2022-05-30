@@ -29,14 +29,14 @@ import java.util.Set;
  */
 public class longestDistinctSubstring {
 	public static void main(String[] args) {
-		System.out.println(longestDistinctSubString("aabccbb"));
-		System.out.println(longestDistinctSubString("abbbb"));
-		System.out.println(longestDistinctSubString("abccde"));//aaaxyzcdl"));
+//		System.out.println(longestDistinctSubString("aabccbb"));
+//		System.out.println(longestDistinctSubString("abbbb"));
+//		System.out.println(longestDistinctSubString("abccde"));//aaaxyzcdl"));
 		
 		System.out.println("Improved and easier version");
 		System.out.println(longestDistinctElements("aabccbb"));
-		System.out.println(longestDistinctElements("abbbb"));
-		System.out.println(longestDistinctElements("abccdeaaaxyzcdl"));
+//		System.out.println(longestDistinctElements("abbbb"));
+//		System.out.println(longestDistinctElements("abccde"));
 	}
 	private static int longestDistinctSubString(String str) {
 		System.out.println(str);
@@ -68,14 +68,20 @@ public class longestDistinctSubstring {
 		for(int windowEnd = 0; windowEnd < str.length(); windowEnd++) {
 			char current = str.charAt(windowEnd);
 			
+//			System.out.println(charFreqMap);
 			if(charFreqMap.containsKey(current)) {
 				// if the map contains the current item
-				// update the startWindow by bringing it all the way to the current element index.
+				// update the startWindow by bringing it all the way to the current element index
+				System.out.println("*  " + windowStart + " : " + (charFreqMap.get(current) + 1));
 				windowStart = Math.max(windowStart, charFreqMap.get(current) + 1);
+//				windowStart = charFreqMap.get(current) + 1;
 			}
-			charFreqMap.put(current, windowEnd); // windowEnd is later used to jump to that part when finding dup.
+			charFreqMap.put(current, windowEnd); // windowEnd is later used to jump to that part when finding duplicate
 			maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
 		}
 		return maxLength;
 	}
 }
+
+
+// this is tricky; in the current window, we will 
