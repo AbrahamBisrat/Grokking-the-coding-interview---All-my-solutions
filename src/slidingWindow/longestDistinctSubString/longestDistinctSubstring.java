@@ -29,14 +29,14 @@ import java.util.Set;
  */
 public class longestDistinctSubstring {
 	public static void main(String[] args) {
-//		System.out.println(longestDistinctSubString("aabccbb"));
-//		System.out.println(longestDistinctSubString("abbbb"));
-//		System.out.println(longestDistinctSubString("abccde"));//aaaxyzcdl"));
+		System.out.println(longestDistinctSubString("aabccbb"));
+		System.out.println(longestDistinctSubString("abbbb"));
+		System.out.println(longestDistinctSubString("abccde"));//aaaxyzcdl"));
 		
 		System.out.println("Improved and easier version");
 		System.out.println(longestDistinctElements("aabccbb"));
-//		System.out.println(longestDistinctElements("abbbb"));
-//		System.out.println(longestDistinctElements("abccde"));
+		System.out.println(longestDistinctElements("abbbb"));
+		System.out.println(longestDistinctElements("abccde"));
 	}
 	private static int longestDistinctSubString(String str) {
 		System.out.println(str);
@@ -82,6 +82,3 @@ public class longestDistinctSubstring {
 		return maxLength;
 	}
 }
-
-
-// this is tricky; in the current window, we will 
