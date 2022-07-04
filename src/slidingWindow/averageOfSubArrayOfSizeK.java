@@ -1,4 +1,4 @@
-package slidingWindow.avgSumSubArray;
+package slidingWindow;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

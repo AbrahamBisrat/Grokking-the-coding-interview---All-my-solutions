@@ -1,4 +1,4 @@
-package slidingWindow.smallestSubarrayWithGivenSum;
+package slidingWindow;
 
 /**
  * 

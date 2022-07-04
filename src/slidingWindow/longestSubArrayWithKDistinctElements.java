@@ -1,4 +1,4 @@
-package slidingWindow.longestSubArrayWithKDistinctChars;
+package slidingWindow;
 
 import java.util.HashMap;
 import java.util.Map;

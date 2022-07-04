@@ -1,4 +1,4 @@
-package slidingWindow.maxSumSubArray;
+package slidingWindow;
 
 /**
  * Given an array of positive numbers and a positive number 'k',

@@ -1,4 +1,4 @@
-package slidingWindow.longestDistinctSubString;
+package slidingWindow;
 
 import java.util.HashMap;
 import java.util.HashSet;
