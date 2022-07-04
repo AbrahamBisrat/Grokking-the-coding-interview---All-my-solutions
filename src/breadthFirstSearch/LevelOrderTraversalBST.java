@@ -5,7 +5,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
-
+/**
+ * Given a binary tree, populate an array to represent its level-by-level traversal in reverse order,
+ * i.e., the lowest level comes first. You should populate the values of all nodes in each level from
+ * left to right in separate sub-arrays.
+ * 
+ * The main difference between the two is the use of Stack to store values.
+ * 
+ * @author Er. Abraham Bisrat https://github.com/abrahammehari
+ *
+ */
 public class LevelOrderTraversalBST {
 	static class TreeNode {
 		private TreeNode left;
