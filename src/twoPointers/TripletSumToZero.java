@@ -36,15 +36,14 @@ public class TripletSumToZero {
 		List<int[]> result = new ArrayList<>();
 		Arrays.sort(arr);
 		for(int i = 0; i < arr.length; i++) {
-			int target = arr[i];
+			int target = -arr[i];
 			
 			int left = i + 1;
 			int right = arr.length - 1;
 			while(right >= left) {
-				p(target + " " + arr[left] + " " + arr[right]);
 				int currentSum = arr[right] + arr[left];
 				if(currentSum == target) {
-					result.add(new int[] {-target, arr[left], arr[right]});
+					result.add(new int[] {target, arr[left], arr[right]});
 					left++;
 					right--;
 					while(right > left && arr[left] == arr[left + 1]) left++;
