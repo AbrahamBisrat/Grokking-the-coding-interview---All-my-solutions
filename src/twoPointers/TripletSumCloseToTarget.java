@@ -29,14 +29,14 @@ public class TripletSumCloseToTarget {
 	public static void pA(int[] arr) { p(Arrays.toString(arr)); }
 
 	public static void main(String[] args) {
-//		p(tripletSumCloseToTarget(new int[] {-2, 0, 1, 2}, 2));
-//		p(tripletSumCloseToTarget(new int[] {-3, -1, 1, 2}, 1));
+		p(tripletSumCloseToTarget(new int[] {-2, 0, 1, 2}, 2));
+		p(tripletSumCloseToTarget(new int[] {-3, -1, 1, 2}, 1));
 		p(tripletSumCloseToTarget(new int[] {1, 0, 1, 1}, 100));
 	}
 	public static int tripletSumCloseToTarget(int[] arr, int targetSum) {
 		if(arr == null || arr.length == 0) throw new IllegalArgumentException("Illegal input");
 		int smallestDiff = Integer.MAX_VALUE;
-		
+
 		Arrays.sort(arr);
 		
 		for(int i = 0; i < arr.length; i++) {
@@ -52,10 +52,8 @@ public class TripletSumCloseToTarget {
 						|| (Math.abs(targetDiff) == Math.abs(smallestDiff) && targetDiff > smallestDiff)) {
 					smallestDiff = targetDiff;
 				}
-				
 				if(targetDiff > 0) left ++;
 				else right--;
-				
 			}
 		}
 		return targetSum - smallestDiff;
