@@ -43,7 +43,7 @@ public class TripletSumToZero {
 			while(right >= left) {
 				int currentSum = arr[right] + arr[left];
 				if(currentSum == target) {
-					result.add(new int[] {target, arr[left], arr[right]});
+					result.add(new int[] {-target, arr[left], arr[right]});
 					left++;
 					right--;
 					while(right > left && arr[left] == arr[left + 1]) left++;
