@@ -34,14 +34,14 @@ public class TripletSumToZero {
 	}
 	public static List<int[]> tripletSumToZero(int[] arr) {
 		List<int[]> result = new ArrayList<>();
-		
+		Arrays.sort(arr);
 		for(int i = 0; i < arr.length; i++) {
 			int target = arr[i];
 			
 			int left = i + 1;
 			int right = arr.length - 1;
-			
-			while(right > left) {
+			while(right >= left) {
+				p(target + " " + arr[left] + " " + arr[right]);
 				int currentSum = arr[right] + arr[left];
 				if(currentSum == target) {
 					result.add(new int[] {-target, arr[left], arr[right]});
@@ -50,8 +50,7 @@ public class TripletSumToZero {
 					while(right > left && arr[left] == arr[left + 1]) left++;
 					while(right > left && arr[right] == arr[right - 1]) right--;
 				}
-				else if(target > currentSum)
-					left++;
+				else if(target > currentSum) left++;
 				else right--;
 			}
 		}
