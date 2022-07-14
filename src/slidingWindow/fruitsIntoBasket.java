@@ -39,6 +39,7 @@ public class fruitsIntoBasket {
 		Map<Character, Integer> charFrequencyMap = new HashMap<>();
 		int max = 0;
 		int secondMax = 0;
+//		{a=3,b=1, c=2, d=3}
 		for(Character each : arr) {
 			charFrequencyMap.put(each, charFrequencyMap.getOrDefault(each, 0) + 1);
 			if(charFrequencyMap.get(each) > max) {
