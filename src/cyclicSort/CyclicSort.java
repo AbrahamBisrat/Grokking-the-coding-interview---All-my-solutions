@@ -1,4 +1,4 @@
-package fastSlowPointers;
+package cyclicSort;
 
 import java.util.Arrays;
 
@@ -38,9 +38,10 @@ public class CyclicSort {
 	public static int[] cyclicSort(int[] arr) {
 		int index = 0;
 		
-		while(index < arr.length)
-			if(arr[index] - 1 != index) swap(arr, index, arr[index] - 1);
+		while(index < arr.length) {
+			if(arr[index] != index + 1) swap(arr, index, arr[index] - 1);
 			else index++;
+		}
 		return arr;
 	}
 	static void swap(int[] arr, int from, int to) {
