@@ -1,8 +1,8 @@
 package fastSlowPointers;
 
 import java.util.Arrays;
-
-import fastSlowPointers.DetectCycleInLinkedList.ListNode;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Problem Statement #
@@ -32,10 +32,16 @@ public class StartOfCycleLinkedList {
 		head.next.next.next.next.next.next = head.next.next.next;
 		p(LinkedListCycleStart(head));
 	}
-	public static int LinkedListCycleStart(ListNode head) {
-		if(head == null || head.next == null) return false;
+	public static ListNode LinkedListCycleStart(ListNode head) {
+		if(head == null || head.next == null) return null;
+		Set<ListNode> set = new HashSet<>();
 		
-		return 0;
+		while(head != null) {
+			if(set.contains(head.next)) return head.next;
+			else set.add(head);
+			head = head.next;
+		}
+		return null;
 	}
 	// problem premise
 	static class ListNode {
