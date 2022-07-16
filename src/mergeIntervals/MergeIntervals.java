@@ -1,6 +1,10 @@
 package mergeIntervals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Problem Statement #
@@ -28,8 +32,48 @@ import java.util.Arrays;
 public class MergeIntervals {
 	public static void p(Object line) { System.out.println(line); }
 	public static void pA(int[] arr) { p(Arrays.toString(arr)); }
-
+	
+	static class Interval {
+		private int start;
+		private int end;
+		Interval(int s, int e) {
+			start = s;
+			end = e;
+		}
+		@Override public String toString() { return "[" + start + " - " + end + "]";};
+	}
+	
 	public static void main(String[] args) {
-		p();
+		List<Interval> intervals = new ArrayList<>();
+		intervals.add(new Interval(1, 4));
+		intervals.add(new Interval(2, 5));
+		intervals.add(new Interval(7, 9));
+		p(intervals);
+		p(mergeIntervals(intervals));
+	}
+	public static List<Interval> mergeIntervals(List<Interval> intervals) {
+		if(intervals.size() < 2) return intervals;
+		List<Interval> mergedIntervals = new ArrayList<>();
+		
+		Iterator<Interval> intervalIterator = intervals.iterator();
+		Interval interval = intervalIterator.next();
+		int start = interval.start;
+		int end = interval.end;
+		
+		while(intervalIterator.hasNext()) {
+			interval = intervalIterator.next();
+					
+			if(interval.start <= end) end = Math.max(interval.end, end);
+			else {
+				mergedIntervals.add(new Interval(start, end));
+				start = interval.start;
+				end = interval.end;
+			}
+		}
+		mergedIntervals.add(new Interval(start, end));
+		return mergedIntervals;
 	}
 }
+
+
+
