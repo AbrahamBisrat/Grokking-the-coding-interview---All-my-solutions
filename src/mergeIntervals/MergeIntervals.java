@@ -55,6 +55,8 @@ public class MergeIntervals {
 		if(intervals.size() < 2) return intervals;
 		List<Interval> mergedIntervals = new ArrayList<>();
 		
+		Collections.sort(intervals, (a, b) -> Integer.compare(a.start, b.start));
+		
 		Iterator<Interval> intervalIterator = intervals.iterator();
 		Interval interval = intervalIterator.next();
 		int start = interval.start;
