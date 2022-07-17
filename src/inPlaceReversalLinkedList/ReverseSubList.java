@@ -66,10 +66,10 @@ public class ReverseSubList {
 		// tie them back together
 		
 		if(tailOfFirstPart != null) tailOfFirstPart.next = prev;
-		else head = prev;
+		else head = prev;// if there is no previous snippet
 		
 		// connect with the last part
-		headOfSecondPart.next = current;
+		headOfSecondPart.next = current; // attach the rest back to the middle segment.
 		return head;
 	}
 }
