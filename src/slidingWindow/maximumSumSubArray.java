@@ -13,12 +13,12 @@ package slidingWindow;
  */
 
 public class maximumSumSubArray {
-	
+	public static void p(Object line) { System.out.println(line); }
 	public static void main(String[] args) {
 		int[] testArray = {2, 1, 5, 1, 3, 2};
 		int k = 3;
-		System.out.println("Max sum of the contiguous values : " + maxSumSubArray(testArray, k));
-		System.out.println("Same Concept different code : " + findMaxSubArray(testArray, k));
+		p("Max sum of the contiguous values : " + maxSumSubArray(testArray, k));
+		p("Same Concept different code : " + findMaxSubArray(testArray, k));
 	}
 	
 	// O(N)
@@ -59,5 +59,4 @@ public class maximumSumSubArray {
 		}
 		return maxSum;
 	}
-	
 }
